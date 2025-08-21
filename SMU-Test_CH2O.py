@@ -24,12 +24,21 @@ ser_mfc = serial.Serial(
 
 ser_smu = serial.Serial(
     port='COM8',
-    baudrate=19200,
+    baudrate=19200, #baud rate changes when using the board instead
     bytesize=serial.EIGHTBITS,
     parity=serial.PARITY_NONE,
     stopbits=serial.STOPBITS_ONE,
     timeout=1
 )
+
+# ser_board = serial.Serial(
+#     port='COM9',
+#     baudrate=19200, #baud rate changes when using the board instead
+#     bytesize=serial.EIGHTBITS,
+#     parity=serial.PARITY_NONE,
+#     stopbits=serial.STOPBITS_ONE,
+#     timeout=1
+# )
 
 def main():
     openSerial(ser_smu)
@@ -121,6 +130,12 @@ def readSMU():
     vals = response.split(',')
     resistance = float(vals[0]) / float(vals[1])
     return resistance
+
+# def readBoard():
+#     response = ser_board.readline().decode().strip()
+#     vals = response.split(',')
+#     resistance = float(vals[0])
+#     return resistance
 
 # def readArduinoRHT():
 #     # Arduino reports every 500ms, which is faster than the poll cycle on SMU. Dump extra lines.
