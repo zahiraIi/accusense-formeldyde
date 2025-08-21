@@ -1,7 +1,5 @@
 ## Atmosense AccuSense CH2O Data Logging (with SMU and MFC Control)
 
-Production-ready instructions and documentation for operating two lab scripts used to collect formaldehyde (CH2O) sensor data with a Source Measure Unit (SMU), optionally read AccuSense CH2O concentration via Modbus/TCP, and control up to three Mass Flow Controllers (MFCs).
-
 ### Contents
 
 - Overview
